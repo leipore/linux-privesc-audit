@@ -1,0 +1,21 @@
+
+## 快速开始
+
+```bash
+# 完整审计, 输出文本报告
+python3 main.py
+
+# 完整审计并保存 JSON
+python3 main.py -o report.json
+
+# 跳过耗时较长的采集器
+python3 main.py --skip suid,filesystem,acl,credentials
+
+# 仅检查特定模块
+python3 main.py --only sudo,suid,capabilities,cron
+
+# 列出所有可用采集器
+python3 main.py --list
+
+# 只输出 JSON (适合管道)
+python3 main.py --quiet -o report.json
