@@ -10,35 +10,37 @@ Linux 本地提权审计工具。通过模块化采集器 + 规则引擎, 从当
 - **可扩展**: 新增检测项只需在对应目录添加模块并注册
 
 ## 目录结构
+```text
 linux-privesc-audit/
-├── main.py # 入口: 编排采集 → 分析 → 输出
-├── collectors/ # 数据采集层
-│ ├── system.py # 系统信息 (内核/发行版)
-│ ├── users.py # 用户与组
-│ ├── sudo.py # sudo 权限
-│ ├── suid.py # SUID/SGID 文件
-│ ├── capabilities.py # Linux Capabilities
-│ ├── filesystem.py # 全局可写文件/关键路径
-│ ├── cron.py # Cron 计划任务
-│ ├── systemd.py # systemd 单元与定时器
-│ ├── processes.py # 进程与环境变量
-│ ├── network.py # 网络监听/接口/防火墙
-│ ├── credentials.py # history/密钥/配置/备份
-│ ├── containers.py # Docker/Podman/LXC 与危险组
-│ ├── kubernetes.py # K8s ServiceAccount/kubeconfig
-│ ├── kernel.py # 内核版本与 CVE 提示
-│ ├── nfs.py # NFS 导出/挂载
-│ └── acl.py # 扩展 ACL
-├── rules/ # 规则引擎层
-│ ├── sudo_rules.py
-│ ├── suid_rules.py
-│ ├── capability_rules.py
-│ ├── cron_rules.py
-│ └── systemd_rules.py
+├── main.py                 # 入口：编排采集 → 分析 → 输出
+├── collectors/             # 数据采集层
+│   ├── system.py           # 系统信息（内核/发行版）
+│   ├── users.py            # 用户与组
+│   ├── sudo.py             # sudo 权限
+│   ├── suid.py             # SUID/SGID 文件
+│   ├── capabilities.py     # Linux Capabilities
+│   ├── filesystem.py       # 全局可写文件/关键路径
+│   ├── cron.py             # Cron 计划任务
+│   ├── systemd.py          # systemd 单元与定时器
+│   ├── processes.py        # 进程与环境变量
+│   ├── network.py          # 网络监听/接口/防火墙
+│   ├── credentials.py      # history/密钥/配置/备份
+│   ├── containers.py       # Docker/Podman/LXC 与危险组
+│   ├── kubernetes.py       # K8s ServiceAccount/kubeconfig
+│   ├── kernel.py           # 内核版本与 CVE 提示
+│   ├── nfs.py              # NFS 导出/挂载
+│   └── acl.py              # 扩展 ACL
+├── rules/                  # 规则引擎层
+│   ├── sudo_rules.py
+│   ├── suid_rules.py
+│   ├── capability_rules.py
+│   ├── cron_rules.py
+│   └── systemd_rules.py
 ├── output/
-│ ├── json_report.py
-│ └── text_report.py
-└── README.md 
+│   ├── json_report.py
+│   └── text_report.py
+└── README.md
+```
 
 
 
